@@ -1,0 +1,1 @@
+enum TypeLayer { tilelayer, objectgroup }

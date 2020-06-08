@@ -2,13 +2,23 @@
 
 Reader of the Tiled file .json
 
-## Getting Started
+# Usage
+To use this plugin, add `tiledjsonreader` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+```yaml
+flutter:
+  assets:
+    - assets/map.json
+    - assets/tile_set.json
+```
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+```dart
+import 'package:tiledjsonreader/tiledjsonreader.dart';
+
+TiledJsonReader tiled = TiledJsonReader('assets/map.json');
+tiled.read().then((map) {
+  print(map);
+});
+... ...
+
+

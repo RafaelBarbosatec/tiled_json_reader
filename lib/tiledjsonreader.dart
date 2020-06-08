@@ -24,11 +24,12 @@ class TiledJsonReader {
     String data = await rootBundle.loadString(pathFile);
     Map<String, dynamic> _result = jsonDecode(data);
     _map = TiledMap.fromJson(_result);
-    _map.tileSets.forEach((tileSet) async {
+    await Future.forEach(_map.tileSets, (tileSet) async {
       if (!tileSet.source.contains('.json')) {
         throw Exception('Invalid TileSet source: only supports json files');
       }
-      String data = await rootBundle.loadString(_basePathFile + tileSet.source);
+      String data =
+          await rootBundle.loadString('$_basePathFile${tileSet.source}');
       if (data != null) {
         Map<String, dynamic> _result = jsonDecode(data);
         tileSet.tileSet = TileSet.fromJson(_result);

@@ -1,4 +1,4 @@
-# tiledjsonreader
+# TiledJsonReader
 
 Reader of the Tiled file .json
 
@@ -19,6 +19,5 @@ TiledJsonReader tiled = TiledJsonReader('assets/map.json');
 tiled.read().then((map) {
   print(map);
 });
-... ...
-
+```
 

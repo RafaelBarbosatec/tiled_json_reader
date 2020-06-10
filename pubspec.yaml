@@ -1,5 +1,5 @@
 name: tiledjsonreader
-description: Reader of the Tiled file .json
+description: Reader of the Tiled file .json and your tileSet.json
 version: 0.0.3
 homepage: https://github.com/RafaelBarbosatec/tiled_json_reader
 

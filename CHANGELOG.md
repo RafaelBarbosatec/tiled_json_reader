@@ -1,3 +1,6 @@
+## [0.0.4] - 12/06/2020
+* add animation in TileSetItem.
+
 ## [0.0.3] - 10/06/2020
 * Fix type param in TileSetObject.
 

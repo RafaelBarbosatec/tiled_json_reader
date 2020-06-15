@@ -1,3 +1,6 @@
+## [0.0.5] - 15/06/2020
+* add type in TileSetItem.
+
 ## [0.0.4] - 12/06/2020
 * add animation in TileSetItem.
 

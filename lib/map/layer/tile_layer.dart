@@ -6,7 +6,7 @@ class TileLayer extends MapLayer {
   double height;
   double offsetX;
   double offsetY;
-  int opacity;
+  double opacity;
   double width;
 
   TileLayer({
@@ -20,17 +20,17 @@ class TileLayer extends MapLayer {
 
   TileLayer.fromJson(Map<String, dynamic> json) {
     data = json['data'].cast<int>();
-    height = double.parse(json['height'].toString());
+    height = double.tryParse(json['height'].toString()) ?? 0.0;
     id = json['id'];
     name = json['name'];
-    offsetX = json['offsetx'];
-    offsetY = json['offsety'];
-    opacity = json['opacity'];
+    offsetX = double.tryParse(json['offsetx'].toString()) ?? 0.0;
+    offsetY = double.tryParse(json['offsety'].toString()) ?? 0.0;
+    opacity = double.tryParse(json['opacity'].toString()) ?? 0.0;
     type = json['type'].toString().getTypeLayer();
     visible = json['visible'];
-    width = double.parse(json['width'].toString());
-    x = double.parse(json['x'].toString());
-    y = double.parse(json['y'].toString());
+    width = double.tryParse(json['width'].toString()) ?? 0.0;
+    x = double.tryParse(json['x'].toString()) ?? 0.0;
+    y = double.tryParse(json['y'].toString()) ?? 0.0;
   }
 
   Map<String, dynamic> toJson() {

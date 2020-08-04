@@ -1,3 +1,6 @@
+## [0.0.6] - 04/08/2020
+* improved conversion of parameters to double in TileLayer.
+
 ## [0.0.5] - 15/06/2020
 * add type in TileSetItem.
 

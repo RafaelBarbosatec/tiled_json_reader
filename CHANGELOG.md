@@ -1,3 +1,6 @@
+## [0.0.7] - 04/08/2020
+* add offset in ObjectGroup.
+
 ## [0.0.6] - 04/08/2020
 * improved conversion of parameters to double in TileLayer.
 

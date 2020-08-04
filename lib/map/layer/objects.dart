@@ -2,7 +2,7 @@ class Objects {
   double height;
   int id;
   String name;
-  int rotation;
+  double rotation;
   String type;
   bool visible;
   double width;
@@ -21,15 +21,15 @@ class Objects {
       this.y});
 
   Objects.fromJson(Map<String, dynamic> json) {
-    height = double.parse(json['height'].toString());
+    height = double.tryParse(json['height'].toString()) ?? 0.0;
     id = json['id'];
     name = json['name'];
-    rotation = json['rotation'];
+    rotation = double.tryParse(json['rotation'].toString()) ?? 0.0;
     type = json['type'];
     visible = json['visible'];
-    width = double.parse(json['width'].toString());
-    x = double.parse(json['x'].toString());
-    y = double.parse(json['y'].toString());
+    width = double.tryParse(json['width'].toString()) ?? 0.0;
+    x = double.tryParse(json['x'].toString()) ?? 0.0;
+    y = double.tryParse(json['y'].toString()) ?? 0.0;
   }
 
   Map<String, dynamic> toJson() {

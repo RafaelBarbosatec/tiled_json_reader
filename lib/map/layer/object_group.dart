@@ -26,8 +26,10 @@ class ObjectGroup extends MapLayer {
     opacity = double.parse(json['opacity'].toString());
     type = json['type'].toString().getTypeLayer();
     visible = json['visible'];
-    x = double.parse(json['x'].toString());
-    y = double.parse(json['y'].toString());
+    x = double.tryParse(json['x'].toString()) ?? 0.0;
+    y = double.tryParse(json['y'].toString()) ?? 0.0;
+    offsetX = double.tryParse(json['offsetx'].toString()) ?? 0.0;
+    offsetY = double.tryParse(json['offsety'].toString()) ?? 0.0;
   }
 
   Map<String, dynamic> toJson() {

@@ -1,4 +1,3 @@
-
 import 'package:tiledjsonreader/map/layer/type_layer.dart';
 import 'package:tiledjsonreader/util/extensions.dart';
 
@@ -8,6 +7,8 @@ class MapLayer {
   bool visible;
   double x;
   double y;
+  double offsetX;
+  double offsetY;
   TypeLayer type;
 
   MapLayer({this.id, this.name, this.type, this.visible, this.x, this.y});

@@ -4,16 +4,12 @@ import 'package:tiledjsonreader/util/extensions.dart';
 class TileLayer extends MapLayer {
   List<int> data;
   double height;
-  double offsetX;
-  double offsetY;
   double opacity;
   double width;
 
   TileLayer({
     this.data,
     this.height,
-    this.offsetX,
-    this.offsetY,
     this.opacity,
     this.width,
   });

@@ -1,3 +1,6 @@
+## [0.0.8] - 17/09/2020
+* improvements toJson in `TileSetDetail`.
+
 ## [0.0.7] - 04/08/2020
 * add offset in ObjectGroup.
 

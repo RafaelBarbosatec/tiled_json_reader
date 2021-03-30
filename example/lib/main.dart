@@ -30,13 +30,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  String json = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title ?? ''),
       ),
-      body: Container(),
+      body: SingleChildScrollView(
+        child: Text(json),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: _loadMap,
         tooltip: 'Load',
@@ -48,7 +51,9 @@ class _MyHomePageState extends State<MyHomePage> {
   void _loadMap() {
     TiledJsonReader tiled = TiledJsonReader('assets/mapa1.json');
     tiled.read().then((value) {
-      print(value.toJson());
+      setState(() {
+        json = value.toJson().toString();
+      });
     });
   }
 }

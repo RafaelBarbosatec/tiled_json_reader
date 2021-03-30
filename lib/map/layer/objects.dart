@@ -8,6 +8,7 @@ class Objects {
   double width;
   double x;
   double y;
+  List<Property> properties;
 
   Objects(
       {this.height,
@@ -18,7 +19,8 @@ class Objects {
       this.visible,
       this.width,
       this.x,
-      this.y});
+      this.y,
+      this.properties});
 
   Objects.fromJson(Map<String, dynamic> json) {
     height = double.tryParse(json['height'].toString()) ?? 0.0;
@@ -30,6 +32,12 @@ class Objects {
     width = double.tryParse(json['width'].toString()) ?? 0.0;
     x = double.tryParse(json['x'].toString()) ?? 0.0;
     y = double.tryParse(json['y'].toString()) ?? 0.0;
+    if (json['properties'] != null) {
+      properties = new List<Property>();
+      json['properties'].forEach((v) {
+        properties.add(new Property.fromJson(v));
+      });
+    }
   }
 
   Map<String, dynamic> toJson() {
@@ -43,6 +51,31 @@ class Objects {
     data['width'] = this.width;
     data['x'] = this.x;
     data['y'] = this.y;
+    if (this.properties != null) {
+      data['properties'] = this.properties.map((v) => v.toJson()).toList();
+    }
+    return data;
+  }
+}
+
+class Property {
+  String name;
+  String type;
+  dynamic value;
+
+  Property({this.name, this.type, this.value});
+
+  Property.fromJson(Map<String, dynamic> json) {
+    name = json['name'];
+    type = json['type'];
+    value = json['value'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['name'] = this.name;
+    data['type'] = this.type;
+    data['value'] = this.value;
     return data;
   }
 }

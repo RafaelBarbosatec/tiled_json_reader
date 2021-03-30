@@ -2,14 +2,14 @@ import 'package:tiledjsonreader/map/layer/type_layer.dart';
 import 'package:tiledjsonreader/util/extensions.dart';
 
 class MapLayer {
-  int id;
-  String name;
-  bool visible;
-  double x;
-  double y;
-  double offsetX;
-  double offsetY;
-  TypeLayer type;
+  int? id;
+  String? name;
+  bool? visible;
+  double? x;
+  double? y;
+  double? offsetX;
+  double? offsetY;
+  TypeLayer? type;
 
   MapLayer({this.id, this.name, this.type, this.visible, this.x, this.y});
 
@@ -26,7 +26,7 @@ class MapLayer {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
     data['name'] = this.name;
-    data['type'] = this.type.getName();
+    data['type'] = this.type?.getName();
     data['visible'] = this.visible;
     data['x'] = this.x;
     data['y'] = this.y;

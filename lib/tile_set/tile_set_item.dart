@@ -2,10 +2,10 @@ import 'package:tiledjsonreader/tile_set/frame_animation.dart';
 import 'package:tiledjsonreader/tile_set/tile_set_object_group.dart';
 
 class TileSetItem {
-  int id;
-  String type;
-  List<FrameAnimation> animation;
-  TileSetObjectGroup objectGroup;
+  int? id;
+  String? type;
+  List<FrameAnimation>? animation;
+  TileSetObjectGroup? objectGroup;
 
   TileSetItem({this.id, this.objectGroup});
 
@@ -16,9 +16,9 @@ class TileSetItem {
         ? new TileSetObjectGroup.fromJson(json['objectgroup'])
         : null;
     if (json['animation'] != null) {
-      animation = new List<FrameAnimation>();
+      animation = <FrameAnimation>[];
       json['animation'].forEach((v) {
-        animation.add(new FrameAnimation.fromJson(v));
+        animation?.add(new FrameAnimation.fromJson(v));
       });
     }
   }
@@ -28,7 +28,7 @@ class TileSetItem {
     data['id'] = this.id;
     data['type'] = this.type;
     if (this.objectGroup != null) {
-      data['objectgroup'] = this.objectGroup.toJson();
+      data['objectgroup'] = this.objectGroup?.toJson();
     }
     return data;
   }

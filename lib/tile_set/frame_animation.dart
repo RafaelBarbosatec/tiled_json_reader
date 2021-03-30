@@ -1,6 +1,6 @@
 class FrameAnimation {
-  double duration;
-  int tileid;
+  double? duration;
+  int? tileid;
 
   FrameAnimation({this.duration, this.tileid});
 

@@ -1,36 +1,37 @@
 import 'package:tiledjsonreader/tile_set/tile_set_item.dart';
 
 class TileSet {
-  int columns;
-  String image;
-  double imageHeight;
-  double imageWidth;
-  double margin;
-  String name;
-  double spacing;
-  int tileCount;
-  String tiledVersion;
-  double tileHeight;
-  List<TileSetItem> tiles;
-  double tileWidth;
-  String type;
-  double version;
+  int? columns;
+  String? image;
+  double? imageHeight;
+  double? imageWidth;
+  double? margin;
+  String? name;
+  double? spacing;
+  int? tileCount;
+  String? tiledVersion;
+  double? tileHeight;
+  List<TileSetItem>? tiles;
+  double? tileWidth;
+  String? type;
+  double? version;
 
-  TileSet(
-      {this.columns,
-      this.image,
-      this.imageHeight,
-      this.imageWidth,
-      this.margin,
-      this.name,
-      this.spacing,
-      this.tileCount,
-      this.tiledVersion,
-      this.tileHeight,
-      this.tiles,
-      this.tileWidth,
-      this.type,
-      this.version});
+  TileSet({
+    this.columns,
+    this.image,
+    this.imageHeight,
+    this.imageWidth,
+    this.margin,
+    this.name,
+    this.spacing,
+    this.tileCount,
+    this.tiledVersion,
+    this.tileHeight,
+    this.tiles,
+    this.tileWidth,
+    this.type,
+    this.version,
+  });
 
   TileSet.fromJson(Map<String, dynamic> json) {
     columns = json['columns'];
@@ -44,9 +45,9 @@ class TileSet {
     tiledVersion = json['tiledversion'];
     tileHeight = double.parse(json['tileheight'].toString());
     if (json['tiles'] != null) {
-      tiles = new List<TileSetItem>();
+      tiles = <TileSetItem>[];
       json['tiles'].forEach((v) {
-        tiles.add(new TileSetItem.fromJson(v));
+        tiles?.add(new TileSetItem.fromJson(v));
       });
     }
     tileWidth = double.parse(json['tilewidth'].toString());
@@ -67,7 +68,7 @@ class TileSet {
     data['tiledversion'] = this.tiledVersion;
     data['tileheight'] = this.tileHeight;
     if (this.tiles != null) {
-      data['tiles'] = this.tiles.map((v) => v.toJson()).toList();
+      data['tiles'] = this.tiles?.map((v) => v.toJson()).toList();
     }
     data['tilewidth'] = this.tileWidth;
     data['type'] = this.type;

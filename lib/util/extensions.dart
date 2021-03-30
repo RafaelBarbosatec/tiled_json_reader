@@ -1,8 +1,7 @@
-
 import 'package:tiledjsonreader/map/layer/type_layer.dart';
 
 extension StringrExtension on String {
-  TypeLayer getTypeLayer() {
+  TypeLayer? getTypeLayer() {
     switch (this) {
       case 'tilelayer':
         return TypeLayer.tilelayer;

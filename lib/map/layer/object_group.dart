@@ -3,9 +3,9 @@ import 'package:tiledjsonreader/map/layer/objects.dart';
 import 'package:tiledjsonreader/util/extensions.dart';
 
 class ObjectGroup extends MapLayer {
-  String drawOrder;
-  List<Objects> objects;
-  double opacity;
+  String? drawOrder;
+  List<Objects>? objects;
+  double? opacity;
 
   ObjectGroup({
     this.drawOrder,
@@ -18,9 +18,9 @@ class ObjectGroup extends MapLayer {
     id = json['id'];
     name = json['name'];
     if (json['objects'] != null) {
-      objects = new List<Objects>();
+      objects = <Objects>[];
       json['objects'].forEach((v) {
-        objects.add(new Objects.fromJson(v));
+        objects?.add(new Objects.fromJson(v));
       });
     }
     opacity = double.parse(json['opacity'].toString());
@@ -38,10 +38,10 @@ class ObjectGroup extends MapLayer {
     data['id'] = this.id;
     data['name'] = this.name;
     if (this.objects != null) {
-      data['objects'] = this.objects.map((v) => v.toJson()).toList();
+      data['objects'] = this.objects?.map((v) => v.toJson()).toList();
     }
     data['opacity'] = this.opacity;
-    data['type'] = this.type.getName();
+    data['type'] = this.type?.getName();
     data['visible'] = this.visible;
     data['x'] = this.x;
     data['y'] = this.y;

@@ -1,30 +1,31 @@
 import 'package:tiledjsonreader/tile_set/polygon.dart';
 
 class TileSetObject {
-  bool ellipse;
-  double height;
-  double width;
-  int id;
-  String name;
-  List<Polygon> polygon;
-  int rotation;
-  String type;
-  bool visible;
-  double x;
-  double y;
+  bool? ellipse;
+  double? height;
+  double? width;
+  int? id;
+  String? name;
+  List<Polygon>? polygon;
+  int? rotation;
+  String? type;
+  bool? visible;
+  double? x;
+  double? y;
 
-  TileSetObject(
-      {this.ellipse,
-      this.height,
-      this.id,
-      this.name,
-      this.polygon,
-      this.rotation,
-      this.type,
-      this.visible,
-      this.width,
-      this.x,
-      this.y});
+  TileSetObject({
+    this.ellipse,
+    this.height,
+    this.id,
+    this.name,
+    this.polygon,
+    this.rotation,
+    this.type,
+    this.visible,
+    this.width,
+    this.x,
+    this.y,
+  });
 
   TileSetObject.fromJson(Map<String, dynamic> json) {
     ellipse = json['ellipse'] ?? false;
@@ -33,9 +34,9 @@ class TileSetObject {
     id = json['id'];
     name = json['name'];
     if (json['polygon'] != null) {
-      polygon = new List<Polygon>();
+      polygon = <Polygon>[];
       json['polygon'].forEach((v) {
-        polygon.add(new Polygon.fromJson(v));
+        polygon?.add(new Polygon.fromJson(v));
       });
     }
     rotation = json['rotation'];
@@ -52,7 +53,7 @@ class TileSetObject {
     data['id'] = this.id;
     data['name'] = this.name;
     if (this.polygon != null) {
-      data['polygon'] = this.polygon.map((v) => v.toJson()).toList();
+      data['polygon'] = this.polygon?.map((v) => v.toJson()).toList();
     }
     data['rotation'] = this.rotation;
     data['type'] = this.type;

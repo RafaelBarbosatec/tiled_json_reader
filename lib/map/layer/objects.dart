@@ -1,26 +1,27 @@
 class Objects {
-  double height;
-  int id;
-  String name;
-  double rotation;
-  String type;
-  bool visible;
-  double width;
-  double x;
-  double y;
-  List<Property> properties;
+  double? height;
+  int? id;
+  String? name;
+  double? rotation;
+  String? type;
+  bool? visible;
+  double? width;
+  double? x;
+  double? y;
+  List<Property>? properties;
 
-  Objects(
-      {this.height,
-      this.id,
-      this.name,
-      this.rotation,
-      this.type,
-      this.visible,
-      this.width,
-      this.x,
-      this.y,
-      this.properties});
+  Objects({
+    this.height,
+    this.id,
+    this.name,
+    this.rotation,
+    this.type,
+    this.visible,
+    this.width,
+    this.x,
+    this.y,
+    this.properties,
+  });
 
   Objects.fromJson(Map<String, dynamic> json) {
     height = double.tryParse(json['height'].toString()) ?? 0.0;
@@ -33,9 +34,9 @@ class Objects {
     x = double.tryParse(json['x'].toString()) ?? 0.0;
     y = double.tryParse(json['y'].toString()) ?? 0.0;
     if (json['properties'] != null) {
-      properties = new List<Property>();
+      properties = <Property>[];
       json['properties'].forEach((v) {
-        properties.add(new Property.fromJson(v));
+        properties?.add(new Property.fromJson(v));
       });
     }
   }
@@ -52,16 +53,16 @@ class Objects {
     data['x'] = this.x;
     data['y'] = this.y;
     if (this.properties != null) {
-      data['properties'] = this.properties.map((v) => v.toJson()).toList();
+      data['properties'] = this.properties?.map((v) => v.toJson()).toList();
     }
     return data;
   }
 }
 
 class Property {
-  String name;
-  String type;
-  dynamic value;
+  String? name;
+  String? type;
+  dynamic? value;
 
   Property({this.name, this.type, this.value});
 

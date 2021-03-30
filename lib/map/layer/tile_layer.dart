@@ -2,10 +2,10 @@ import 'package:tiledjsonreader/map/layer/map_layer.dart';
 import 'package:tiledjsonreader/util/extensions.dart';
 
 class TileLayer extends MapLayer {
-  List<int> data;
-  double height;
-  double opacity;
-  double width;
+  List<int>? data;
+  double? height;
+  double? opacity;
+  double? width;
 
   TileLayer({
     this.data,
@@ -38,7 +38,7 @@ class TileLayer extends MapLayer {
     data['offsetx'] = this.offsetX;
     data['offsety'] = this.offsetY;
     data['opacity'] = this.opacity;
-    data['type'] = this.type.getName();
+    data['type'] = this.type?.getName();
     data['visible'] = this.visible;
     data['width'] = this.width;
     data['x'] = this.x;

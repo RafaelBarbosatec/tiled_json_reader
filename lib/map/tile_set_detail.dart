@@ -1,9 +1,9 @@
 import 'package:tiledjsonreader/tile_set/tile_set.dart';
 
 class TileSetDetail {
-  int firsTgId;
-  String source;
-  TileSet tileSet;
+  int? firsTgId;
+  String? source;
+  TileSet? tileSet;
 
   TileSetDetail({this.firsTgId, this.source, this.tileSet});
 
@@ -17,7 +17,7 @@ class TileSetDetail {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['firstgid'] = this.firsTgId;
     data['source'] = this.source;
-    if (tileSet != null) data['tileSet'] = tileSet.toJson();
+    if (tileSet != null) data['tileSet'] = tileSet?.toJson();
     return data;
   }
 }

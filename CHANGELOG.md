@@ -1,3 +1,7 @@
+## [1.0.0] - 17/09/2020
+* add nullsafety
+* add Objects properties [PR](https://github.com/RafaelBarbosatec/tiled_json_reader/pull/2)
+
 ## [0.0.8] - 17/09/2020
 * improvements toJson in `TileSetDetail`.
 

@@ -1,6 +1,6 @@
 class Polygon {
-  double x;
-  double y;
+  double? x;
+  double? y;
 
   Polygon({this.x, this.y});
 

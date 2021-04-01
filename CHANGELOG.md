@@ -1,4 +1,7 @@
-## [1.0.0] - 17/09/2020
+## [1.0.0+1] - 01/04/2021
+* update package description
+
+## [1.0.0] - 01/04/2021
 * add nullsafety
 * add Objects properties [PR](https://github.com/RafaelBarbosatec/tiled_json_reader/pull/2)
 

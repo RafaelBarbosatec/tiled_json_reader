@@ -1,6 +1,6 @@
 name: tiledjsonreader
-description: Reader of the Tiled file .json and your tileSet.json
-version: 1.0.0
+description: Simple reader to convert files .json generated from Tiled into Objects
+version: 1.0.0+1
 homepage: https://github.com/RafaelBarbosatec/tiled_json_reader
 
 environment:

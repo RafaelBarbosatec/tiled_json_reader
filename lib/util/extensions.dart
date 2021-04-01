@@ -5,10 +5,8 @@ extension StringrExtension on String {
     switch (this) {
       case 'tilelayer':
         return TypeLayer.tilelayer;
-        break;
       case 'objectgroup':
         return TypeLayer.objectgroup;
-        break;
       default:
         return null;
     }

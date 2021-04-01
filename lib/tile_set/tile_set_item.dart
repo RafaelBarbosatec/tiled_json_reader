@@ -1,17 +1,34 @@
+import 'package:tiledjsonreader/map/layer/objects.dart';
 import 'package:tiledjsonreader/tile_set/frame_animation.dart';
 import 'package:tiledjsonreader/tile_set/tile_set_object_group.dart';
 
 class TileSetItem {
   int? id;
   String? type;
+  String? image;
+  int? imageheight;
+  int? imagewidth;
+  double? probability;
+  List<int>? terrain;
   List<FrameAnimation>? animation;
   TileSetObjectGroup? objectGroup;
+  List<Property>? properties;
 
   TileSetItem({this.id, this.objectGroup});
 
   TileSetItem.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     type = json['type'];
+    image = json['image'];
+    imageheight = json['imageheight'];
+    imagewidth = json['imagewidth'];
+    probability = json['probability'];
+    if (json['terrain'] != null) {
+      terrain = <int>[];
+      json['terrain'].forEach((v) {
+        terrain?.add(v);
+      });
+    }
     objectGroup = json['objectgroup'] != null
         ? new TileSetObjectGroup.fromJson(json['objectgroup'])
         : null;
@@ -19,6 +36,12 @@ class TileSetItem {
       animation = <FrameAnimation>[];
       json['animation'].forEach((v) {
         animation?.add(new FrameAnimation.fromJson(v));
+      });
+    }
+    if (json['properties'] != null) {
+      properties = <Property>[];
+      json['properties'].forEach((v) {
+        properties?.add(new Property.fromJson(v));
       });
     }
   }

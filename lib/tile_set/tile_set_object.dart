@@ -2,16 +2,19 @@ import 'package:tiledjsonreader/tile_set/polygon.dart';
 
 class TileSetObject {
   bool? ellipse;
+  int? gid;
   double? height;
   double? width;
   int? id;
   String? name;
   List<Polygon>? polygon;
+  List<Polygon>? polyline;
   int? rotation;
   String? type;
   bool? visible;
   double? x;
   double? y;
+  bool? point;
 
   TileSetObject({
     this.ellipse,
@@ -32,11 +35,19 @@ class TileSetObject {
     height = double.parse(json['height'].toString());
     width = double.parse(json['width'].toString());
     id = json['id'];
+    gid = json['gid'];
     name = json['name'];
+    point = json['point'];
     if (json['polygon'] != null) {
       polygon = <Polygon>[];
       json['polygon'].forEach((v) {
         polygon?.add(new Polygon.fromJson(v));
+      });
+    }
+    if (json['polyline'] != null) {
+      polyline = <Polygon>[];
+      json['polyline'].forEach((v) {
+        polyline?.add(new Polygon.fromJson(v));
       });
     }
     rotation = json['rotation'];

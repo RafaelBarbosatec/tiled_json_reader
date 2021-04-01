@@ -6,8 +6,8 @@ class TileSetItem {
   int? id;
   String? type;
   String? image;
-  int? imageheight;
-  int? imagewidth;
+  int? imageHeight;
+  int? imageWidth;
   double? probability;
   List<int>? terrain;
   List<FrameAnimation>? animation;
@@ -20,8 +20,8 @@ class TileSetItem {
     id = json['id'];
     type = json['type'];
     image = json['image'];
-    imageheight = json['imageheight'];
-    imagewidth = json['imagewidth'];
+    imageHeight = json['imageheight'];
+    imageWidth = json['imagewidth'];
     probability = json['probability'];
     if (json['terrain'] != null) {
       terrain = <int>[];

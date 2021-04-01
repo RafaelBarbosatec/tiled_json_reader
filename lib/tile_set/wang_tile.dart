@@ -1,13 +1,13 @@
 class WangTile {
-  int? tileid;
-  List<int>? wangid;
+  int? tileId;
+  List<int>? wangId;
 
   WangTile.fromJson(Map<String, dynamic> json) {
-    tileid = json['tileid'];
+    tileId = json['tileid'];
     if (json['wangid'] != null) {
-      wangid = <int>[];
+      wangId = <int>[];
       json['wangid'].forEach((v) {
-        wangid?.add(v);
+        wangId?.add(v);
       });
     }
   }

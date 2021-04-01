@@ -4,27 +4,27 @@ import 'package:tiledjsonreader/tile_set/tile_set.dart';
 import 'package:tiledjsonreader/tile_set/wang_set.dart';
 
 class TileSetDetail {
-  String? backgroundcolor;
+  String? backgroundColor;
   int? columns;
   int? firsTgId;
   String? image;
-  int? imageheight;
-  int? imagewidth;
+  int? imageHeight;
+  int? imageWidth;
   int? margin;
   String? name;
-  String? objectalignment;
+  String? objectAlignment;
   List<Property>? properties;
   String? source;
   int? spacing;
   List<Terrain>? terrains;
-  int? tilecount;
-  String? tiledversion;
-  int? tileheight;
-  int? tilewidth;
-  String? transparentcolor;
+  int? tileCount;
+  String? tiledVersion;
+  int? tileHeight;
+  int? tileWidth;
+  String? transparentColor;
   String? type;
   String? version;
-  List<WangSet>? wangsets;
+  List<WangSet>? wangSets;
   TileSet? tileSet;
 
   TileSetDetail({this.firsTgId, this.source, this.tileSet});
@@ -32,20 +32,20 @@ class TileSetDetail {
   TileSetDetail.fromJson(Map<String, dynamic> json) {
     firsTgId = json['firstgid'];
     source = json['source'];
-    backgroundcolor = json['backgroundcolor'];
+    backgroundColor = json['backgroundcolor'];
     columns = json['columns'];
     image = json['image'];
-    imageheight = json['imageheight'];
-    imagewidth = json['imagewidth'];
+    imageHeight = json['imageheight'];
+    imageWidth = json['imagewidth'];
     margin = json['margin'];
     name = json['name'];
-    objectalignment = json['objectalignment'];
+    objectAlignment = json['objectalignment'];
     spacing = json['spacing'];
-    tilecount = json['tilecount'];
-    tiledversion = json['tiledversion'];
-    tileheight = json['tileheight'];
-    tilewidth = json['tilewidth'];
-    transparentcolor = json['transparentcolor'];
+    tileCount = json['tilecount'];
+    tiledVersion = json['tiledversion'];
+    tileHeight = json['tileheight'];
+    tileWidth = json['tilewidth'];
+    transparentColor = json['transparentcolor'];
     version = json['version'];
     type = json['type'];
     if (json['tileSet'] != null) tileSet = TileSet.fromJson(json['tileSet']);
@@ -62,9 +62,9 @@ class TileSetDetail {
       });
     }
     if (json['wangsets'] != null) {
-      wangsets = [];
+      wangSets = [];
       json['wangsets'].forEach((v) {
-        wangsets?.add(WangSet.fromJson(v));
+        wangSets?.add(WangSet.fromJson(v));
       });
     }
   }

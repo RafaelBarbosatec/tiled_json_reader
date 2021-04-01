@@ -6,18 +6,18 @@ import 'package:tiledjsonreader/map/tile_set_detail.dart';
 import 'package:tiledjsonreader/util/extensions.dart';
 
 class TiledMap {
-  String? backgroundcolor;
+  String? backgroundColor;
   int? compressionLevel;
   int? height;
-  int? hexsidelength;
+  int? hexSideLength;
   bool? infinite;
   List<MapLayer>? layers;
   int? nextLayerId;
   int? nextObjectId;
   String? orientation;
   String? renderOrder;
-  String? staggeraxis;
-  String? staggerindex;
+  String? staggerAxis;
+  String? staggerIndex;
   String? tiledVersion;
   int? tileHeight;
   List<TileSetDetail>? tileSets;
@@ -76,10 +76,10 @@ class TiledMap {
     type = json['type'];
     version = json['version'];
     width = json['width'];
-    backgroundcolor = json['backgroundcolor'];
-    hexsidelength = json['hexsidelength'];
-    staggeraxis = json['staggeraxis'];
-    staggerindex = json['staggerindex'];
+    backgroundColor = json['backgroundcolor'];
+    hexSideLength = json['hexsidelength'];
+    staggerAxis = json['staggeraxis'];
+    staggerIndex = json['staggerindex'];
   }
 
   Map<String, dynamic> toJson() {

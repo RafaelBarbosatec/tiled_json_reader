@@ -1,9 +1,11 @@
-import 'package:tiledjsonreader/map/layer/map_layer.dart';
-import 'package:tiledjsonreader/map/layer/object_group.dart';
-import 'package:tiledjsonreader/map/layer/tile_layer.dart';
-import 'package:tiledjsonreader/map/layer/type_layer.dart';
-import 'package:tiledjsonreader/map/tile_set_detail.dart';
-import 'package:tiledjsonreader/util/extensions.dart';
+import '../map/layer/map_layer.dart';
+import '../map/layer/object_group.dart';
+import '../map/layer/tile_layer.dart';
+import '../map/layer/type_layer.dart';
+import '../map/tile_set_detail.dart';
+import '../util/extensions.dart';
+import 'layer/group_layer.dart';
+import 'layer/image_layer.dart';
 
 class TiledMap {
   String? backgroundColor;
@@ -55,6 +57,10 @@ class TiledMap {
           layers?.add(TileLayer.fromJson(v));
         } else if (v['type'] == TypeLayer.objectgroup.getName()) {
           layers?.add(ObjectGroup.fromJson(v));
+        } else if (v['type'] == TypeLayer.imagelayer.getName()) {
+          layers?.add(ImageLayer.fromJson(v));
+        } else if (v['type'] == TypeLayer.group.getName()) {
+          layers?.add(GroupLayer.fromJson(v));
         } else {
           layers?.add(MapLayer.fromJson(v));
         }

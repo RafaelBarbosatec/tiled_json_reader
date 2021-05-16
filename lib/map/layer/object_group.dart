@@ -5,12 +5,10 @@ import 'package:tiledjsonreader/util/extensions.dart';
 class ObjectGroup extends MapLayer {
   String? drawOrder;
   List<Objects>? objects;
-  double? opacity;
 
   ObjectGroup({
     this.drawOrder,
     this.objects,
-    this.opacity,
   });
 
   ObjectGroup.fromJson(Map<String, dynamic> json) {

@@ -1,8 +1,12 @@
+## [1.0.1] - 15/05/2021
+* add group layer
+* add image layer
+
 ## [1.0.0+1] - 01/04/2021
 * update package description
 
 ## [1.0.0] - 01/04/2021
-* add nullsafety
+* add null-safety
 * add Objects properties [PR](https://github.com/RafaelBarbosatec/tiled_json_reader/pull/2)
 
 ## [0.0.8] - 17/09/2020

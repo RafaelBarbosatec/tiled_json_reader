@@ -1,16 +1,14 @@
-import 'package:tiledjsonreader/map/layer/map_layer.dart';
-import 'package:tiledjsonreader/util/extensions.dart';
+import '../../map/layer/map_layer.dart';
+import '../../util/extensions.dart';
 
 class TileLayer extends MapLayer {
   List<int>? data;
   double? height;
-  double? opacity;
   double? width;
 
   TileLayer({
     this.data,
     this.height,
-    this.opacity,
     this.width,
   });
 

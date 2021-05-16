@@ -10,14 +10,23 @@ class MapLayer {
   double? offsetX;
   double? offsetY;
   TypeLayer? type;
+  double? opacity;
 
-  MapLayer({this.id, this.name, this.type, this.visible, this.x, this.y});
+  MapLayer(
+      {this.id,
+      this.name,
+      this.type,
+      this.visible,
+      this.x,
+      this.y,
+      this.opacity});
 
   MapLayer.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     type = json['type'].toString().getTypeLayer();
     visible = json['visible'];
+    opacity = double.tryParse(json['opacity'].toString()) ?? 0.0;
     x = double.parse(json['x'].toString());
     y = double.parse(json['y'].toString());
   }

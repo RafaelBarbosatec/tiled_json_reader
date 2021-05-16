@@ -7,6 +7,8 @@ extension StringrExtension on String {
         return TypeLayer.tilelayer;
       case 'objectgroup':
         return TypeLayer.objectgroup;
+      case 'imagelayer':
+        return TypeLayer.imagelayer;
       default:
         return null;
     }

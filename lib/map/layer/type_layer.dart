@@ -1,1 +1,1 @@
-enum TypeLayer { tilelayer, objectgroup }
+enum TypeLayer { tilelayer, objectgroup, imagelayer, group }

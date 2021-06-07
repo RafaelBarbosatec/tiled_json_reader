@@ -1,3 +1,6 @@
+## [1.0.2] - 07/07/2021
+* forces parameter `version` conversion to `Double`
+
 ## [1.0.1] - 15/05/2021
 * add group layer
 * add image layer

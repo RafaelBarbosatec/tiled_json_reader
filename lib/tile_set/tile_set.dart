@@ -52,7 +52,7 @@ class TileSet {
     }
     tileWidth = double.parse(json['tilewidth'].toString());
     type = json['type'];
-    version = json['version'];
+    version = double.tryParse(json['version'].toString()) ?? 0.0;
   }
 
   Map<String, dynamic> toJson() {

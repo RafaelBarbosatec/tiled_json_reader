@@ -80,7 +80,7 @@ class TiledMap {
     }
     tileWidth = json['tilewidth'];
     type = json['type'];
-    version = double.parse(json['version'].toString());
+    version = double.tryParse(json['version'].toString()) ?? 0.0;
     width = json['width'];
     backgroundColor = json['backgroundcolor'];
     hexSideLength = json['hexsidelength'];

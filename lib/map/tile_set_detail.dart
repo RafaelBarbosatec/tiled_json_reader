@@ -23,7 +23,7 @@ class TileSetDetail {
   int? tileWidth;
   String? transparentColor;
   String? type;
-  String? version;
+  double? version;
   List<WangSet>? wangSets;
   TileSet? tileSet;
 
@@ -46,7 +46,7 @@ class TileSetDetail {
     tileHeight = json['tileheight'];
     tileWidth = json['tilewidth'];
     transparentColor = json['transparentcolor'];
-    version = json['version'];
+    version = double.tryParse(json['version'].toString()) ?? 0.0;
     type = json['type'];
     if (json['tileSet'] != null) tileSet = TileSet.fromJson(json['tileSet']);
     if (json['properties'] != null) {

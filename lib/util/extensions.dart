@@ -9,6 +9,8 @@ extension StringrExtension on String {
         return TypeLayer.objectgroup;
       case 'imagelayer':
         return TypeLayer.imagelayer;
+      case 'group':
+        return TypeLayer.group;
       default:
         return null;
     }

@@ -36,4 +36,19 @@ class GroupLayer extends MapLayer {
       });
     }
   }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['name'] = this.name;
+    if (this.layers != null) {
+      data['layers'] = this.layers?.map((v) => v.toJson()).toList();
+    }
+    data['opacity'] = this.opacity;
+    data['type'] = this.type?.getName();
+    data['visible'] = this.visible;
+    data['x'] = this.x;
+    data['y'] = this.y;
+    return data;
+  }
 }

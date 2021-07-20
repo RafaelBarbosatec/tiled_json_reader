@@ -1,3 +1,6 @@
+## [1.0.4] - 20/07/2021
+* improvements in type `group`
+
 ## [1.0.3] - 18/06/2021
 * forces parameter `version` conversion to `Double`
 

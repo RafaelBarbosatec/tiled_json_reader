@@ -3,8 +3,8 @@ import '../../util/extensions.dart';
 
 class ImageLayer extends MapLayer {
   String image;
-  int parallaxX;
-  int parallaxY;
+  double parallaxX;
+  double parallaxY;
 
   ImageLayer({
     required this.image,
@@ -14,8 +14,8 @@ class ImageLayer extends MapLayer {
 
   ImageLayer.fromJson(Map<String, dynamic> json)
       : image = json['image'],
-        parallaxX = int.tryParse(json['parallaxx'].toString()) ?? 1,
-        parallaxY = int.tryParse(json['parallaxy'].toString()) ?? 1 {
+        parallaxX = double.tryParse(json['parallaxx'].toString()) ?? 1,
+        parallaxY = double.tryParse(json['parallaxy'].toString()) ?? 1 {
     id = json['id'];
     name = json['name'];
     offsetX = double.tryParse(json['offsetx'].toString()) ?? 0.0;

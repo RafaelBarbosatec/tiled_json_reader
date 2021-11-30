@@ -1,3 +1,6 @@
+## [1.0.7]
+* Change parallax params to double.
+
 ## [1.0.6]
 * Fix `gid` == null
 

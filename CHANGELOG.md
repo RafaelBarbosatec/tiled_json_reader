@@ -1,5 +1,6 @@
 ## [1.0.5]
 * Add parallax params in `ImageLayer`
+* Add param `gid` in `Objects`. [issue 3](https://github.com/RafaelBarbosatec/tiled_json_reader/issues/3)
 
 ## [1.0.4] - 20/07/2021
 * improvements in type `group`

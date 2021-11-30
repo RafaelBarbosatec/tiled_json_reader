@@ -1,18 +1,22 @@
 class Objects {
   double? height;
   int? id;
+  int? gid;
   String? name;
-  double? rotation;
   String? type;
+  double? rotation;
   bool? visible;
   double? width;
   double? x;
   double? y;
+  bool? ellipse;
+  bool? point;
   List<Property>? properties;
 
   Objects({
     this.height,
     this.id,
+    this.gid,
     this.name,
     this.rotation,
     this.type,
@@ -21,11 +25,16 @@ class Objects {
     this.x,
     this.y,
     this.properties,
+    this.ellipse,
+    this.point,
   });
 
   Objects.fromJson(Map<String, dynamic> json) {
     height = double.tryParse(json['height'].toString()) ?? 0.0;
     id = json['id'];
+    ellipse = json['ellipse'] ?? false;
+    point = json['point'] ?? false;
+    gid = int.tryParse(json['gid']);
     name = json['name'];
     rotation = double.tryParse(json['rotation'].toString()) ?? 0.0;
     type = json['type'];
@@ -45,6 +54,9 @@ class Objects {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['height'] = this.height;
     data['id'] = this.id;
+    data['gid'] = this.gid;
+    data['ellipse'] = this.ellipse;
+    data['point'] = this.point;
     data['name'] = this.name;
     data['rotation'] = this.rotation;
     data['type'] = this.type;

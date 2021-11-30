@@ -1,3 +1,6 @@
+## [1.0.6]
+* Fix `gid` == null
+
 ## [1.0.5]
 * Add parallax params in `ImageLayer`
 * Add param `gid` in `Objects`. [issue 3](https://github.com/RafaelBarbosatec/tiled_json_reader/issues/3)

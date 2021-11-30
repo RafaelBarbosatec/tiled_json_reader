@@ -34,7 +34,7 @@ class Objects {
     id = json['id'];
     ellipse = json['ellipse'] ?? false;
     point = json['point'] ?? false;
-    gid = int.tryParse(json['gid']);
+    gid = int.tryParse(json['gid'].toString());
     name = json['name'];
     rotation = double.tryParse(json['rotation'].toString()) ?? 0.0;
     type = json['type'];

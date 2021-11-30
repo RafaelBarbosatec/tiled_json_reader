@@ -1,3 +1,6 @@
+## [next]
+* Add parallax params in `ImageLayer`
+
 ## [1.0.4] - 20/07/2021
 * improvements in type `group`
 

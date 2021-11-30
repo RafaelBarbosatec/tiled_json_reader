@@ -26,4 +26,20 @@ class ImageLayer extends MapLayer {
     x = double.tryParse(json['x'].toString()) ?? 0.0;
     y = double.tryParse(json['y'].toString()) ?? 0.0;
   }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['name'] = this.name;
+    data['type'] = this.type?.getName();
+    data['visible'] = this.visible;
+    data['x'] = this.x;
+    data['y'] = this.y;
+    data['offsetx'] = this.offsetX;
+    data['offsety'] = this.offsetY;
+    data['parallaxx'] = this.parallaxX;
+    data['parallaxy'] = this.parallaxY;
+    data['image'] = this.image;
+    return data;
+  }
 }

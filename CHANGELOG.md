@@ -1,3 +1,6 @@
+## [1.0.8]
+* Add `Text` in `Objects`.
+
 ## [1.0.7]
 * Change parallax params to double.
 

@@ -1,3 +1,5 @@
+import 'package:tiledjsonreader/map/layer/text.dart';
+
 class Objects {
   double? height;
   int? id;
@@ -12,6 +14,7 @@ class Objects {
   bool? ellipse;
   bool? point;
   List<Property>? properties;
+  Text? text;
 
   Objects({
     this.height,
@@ -27,6 +30,7 @@ class Objects {
     this.properties,
     this.ellipse,
     this.point,
+    this.text,
   });
 
   Objects.fromJson(Map<String, dynamic> json) {
@@ -42,6 +46,9 @@ class Objects {
     width = double.tryParse(json['width'].toString()) ?? 0.0;
     x = double.tryParse(json['x'].toString()) ?? 0.0;
     y = double.tryParse(json['y'].toString()) ?? 0.0;
+    if (json['text'] != null) {
+      text = Text.fromJson(json['text']);
+    }
     if (json['properties'] != null) {
       properties = <Property>[];
       json['properties'].forEach((v) {
@@ -66,6 +73,9 @@ class Objects {
     data['y'] = this.y;
     if (this.properties != null) {
       data['properties'] = this.properties?.map((v) => v.toJson()).toList();
+    }
+    if (this.text != null) {
+      data['text'] = this.text?.toJson();
     }
     return data;
   }

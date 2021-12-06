@@ -1,3 +1,6 @@
+## [1.0.9]
+* Add `polygon` and `polyline` in `Objects`.
+
 ## [1.0.8]
 * Add `Text` in `Objects`.
 

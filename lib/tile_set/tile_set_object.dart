@@ -66,6 +66,9 @@ class TileSetObject {
     if (this.polygon != null) {
       data['polygon'] = this.polygon?.map((v) => v.toJson()).toList();
     }
+    if (this.polyline != null) {
+      data['polyline'] = this.polyline?.map((v) => v.toJson()).toList();
+    }
     data['rotation'] = this.rotation;
     data['type'] = this.type;
     data['visible'] = this.visible;

@@ -1,4 +1,5 @@
 import 'package:tiledjsonreader/map/layer/text.dart';
+import 'package:tiledjsonreader/tile_set/polygon.dart';
 
 class Objects {
   double? height;
@@ -15,6 +16,8 @@ class Objects {
   bool? point;
   List<Property>? properties;
   Text? text;
+  List<Polygon>? polygon;
+  List<Polygon>? polyline;
 
   Objects({
     this.height,
@@ -55,6 +58,18 @@ class Objects {
         properties?.add(new Property.fromJson(v));
       });
     }
+    if (json['polygon'] != null) {
+      polygon = <Polygon>[];
+      json['polygon'].forEach((v) {
+        polygon?.add(new Polygon.fromJson(v));
+      });
+    }
+    if (json['polyline'] != null) {
+      polyline = <Polygon>[];
+      json['polyline'].forEach((v) {
+        polyline?.add(new Polygon.fromJson(v));
+      });
+    }
   }
 
   Map<String, dynamic> toJson() {
@@ -77,6 +92,12 @@ class Objects {
     if (this.text != null) {
       data['text'] = this.text?.toJson();
     }
+    if (this.polygon != null) {
+      data['polygon'] = this.polygon?.map((v) => v.toJson()).toList();
+    }
+    if (this.polyline != null) {
+      data['polyline'] = this.polyline?.map((v) => v.toJson()).toList();
+    }
     return data;
   }
 }
@@ -84,7 +105,7 @@ class Objects {
 class Property {
   String? name;
   String? type;
-  dynamic? value;
+  dynamic value;
 
   Property({this.name, this.type, this.value});
 

@@ -1,3 +1,6 @@
+## [1.1.0]
+* Adds support to `tsj` and `tmj` format
+
 ## [1.0.9]
 * Add `polygon` and `polyline` in `Objects`.
 

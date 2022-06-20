@@ -16,7 +16,8 @@ class TiledJsonReader {
 
   TiledJsonReader(this.pathFile) {
     _fileName = pathFile.split('/').last;
-    if (_fileName?.contains('.json') != true) {
+    if (!(_fileName?.contains('.json') == true ||
+        _fileName?.contains('.tmj') == true)) {
       throw Exception('only supports json files');
     }
     _basePathFile = pathFile.replaceAll(_fileName ?? '', '');
@@ -28,7 +29,8 @@ class TiledJsonReader {
     _map = TiledMap.fromJson(_result);
     if (_map?.tileSets != null) {
       await Future.forEach(_map!.tileSets!, (TileSetDetail tileSet) async {
-        if (!tileSet.source!.contains('.json')) {
+        if (!(tileSet.source!.contains('.json') ||
+            tileSet.source!.contains('.tsj'))) {
           throw Exception('Invalid TileSet source: only supports json files');
         }
         String data = await rootBundle.loadString(

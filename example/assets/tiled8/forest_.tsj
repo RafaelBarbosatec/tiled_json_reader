@@ -1,0 +1,14 @@
+{ "columns":15,
+ "image":"forest_.png",
+ "imageheight":576,
+ "imagewidth":240,
+ "margin":0,
+ "name":"forest_",
+ "spacing":0,
+ "tilecount":540,
+ "tiledversion":"1.8.6",
+ "tileheight":16,
+ "tilewidth":16,
+ "type":"tileset",
+ "version":"1.8"
+}

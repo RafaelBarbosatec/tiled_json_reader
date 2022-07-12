@@ -9,7 +9,7 @@ class TileSetObject {
   String? name;
   List<Polygon>? polygon;
   List<Polygon>? polyline;
-  int? rotation;
+  double? rotation;
   String? type;
   bool? visible;
   double? x;
@@ -50,7 +50,7 @@ class TileSetObject {
         polyline?.add(new Polygon.fromJson(v));
       });
     }
-    rotation = json['rotation'];
+    rotation = double.parse(json['rotation'].toString());
     type = json['type'];
     visible = json['visible'];
     x = double.parse(json['x'].toString());

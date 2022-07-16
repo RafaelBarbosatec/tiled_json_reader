@@ -24,7 +24,7 @@ class TileSetItem {
     image = json['image'];
     imageHeight = json['imageheight'];
     imageWidth = json['imagewidth'];
-    probability = json['probability'];
+    probability = json['probability']?.toDouble() ?? 0.0;
     if (json['terrain'] != null) {
       terrain = <int>[];
       json['terrain'].forEach((v) {

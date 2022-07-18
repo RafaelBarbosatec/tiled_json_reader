@@ -1,3 +1,7 @@
+## [1.1.2]
+* Adds properties in Layers
+* fix probability of TileSetItem. [PR 5](https://github.com/RafaelBarbosatec/tiled_json_reader/pull/5). Thanks [gnenux](https://github.com/gnenux)
+
 ## [1.1.1]
 * Adds new property in Tile: `tileClass`.
 * Fix rotation of TileSetObject. [#4](https://github.com/RafaelBarbosatec/tiled_json_reader/pull/4) Thanks [MrDgbot](https://github.com/MrDgbot)!

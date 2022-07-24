@@ -1,3 +1,6 @@
+## [1.2.2]
+* fix `updateFromMap`;
+
 ## [1.2.1]
 * fix json property `tileWidth` to `tilewidth`;
 

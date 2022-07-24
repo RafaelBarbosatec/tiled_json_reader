@@ -75,8 +75,6 @@ class TileSetDetail {
   }
 
   void updateFromMap(Map<String, dynamic> json) {
-    firsTgId = json['firstgid'];
-    source = json['source'];
     backgroundColor = json['backgroundcolor'];
     columns = json['columns'];
     image = json['image'];

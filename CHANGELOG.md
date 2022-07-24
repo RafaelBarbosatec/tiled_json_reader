@@ -1,3 +1,6 @@
+## [1.2.1]
+* fix json property `tileWidth` to `tilewidth`;
+
 ## [1.2.0]
 * Improvements in read tileset.
 

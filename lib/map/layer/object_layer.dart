@@ -1,21 +1,21 @@
 import 'package:tiledjsonreader/map/layer/map_layer.dart';
 import 'package:tiledjsonreader/map/layer/objects.dart';
 
-class ObjectGroup extends MapLayer {
+class ObjectLayer extends MapLayer {
   String? drawOrder;
   List<Objects>? objects;
 
-  ObjectGroup({
+  ObjectLayer({
     this.drawOrder,
     this.objects,
   });
 
-  ObjectGroup.fromJson(Map<String, dynamic> json) {
+  ObjectLayer.fromJson(Map<String, dynamic> json) {
     drawOrder = json['draworder'];
     if (json['objects'] != null) {
       objects = <Objects>[];
       json['objects'].forEach((v) {
-        objects?.add(new Objects.fromJson(v));
+        objects?.add(Objects.fromJson(v));
       });
     }
     setParamsFromJson(json);

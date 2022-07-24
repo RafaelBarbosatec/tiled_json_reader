@@ -1,7 +1,7 @@
 import '../../util/extensions.dart';
 import 'image_layer.dart';
 import 'map_layer.dart';
-import 'object_group.dart';
+import 'object_layer.dart';
 import 'tile_layer.dart';
 import 'type_layer.dart';
 
@@ -25,7 +25,7 @@ class GroupLayer extends MapLayer {
         if (v['type'] == TypeLayer.tilelayer.getName()) {
           layers?.add(TileLayer.fromJson(v));
         } else if (v['type'] == TypeLayer.objectgroup.getName()) {
-          layers?.add(ObjectGroup.fromJson(v));
+          layers?.add(ObjectLayer.fromJson(v));
         } else if (v['type'] == TypeLayer.imagelayer.getName()) {
           layers?.add(ImageLayer.fromJson(v));
         } else if (v['type'] == TypeLayer.group.getName()) {

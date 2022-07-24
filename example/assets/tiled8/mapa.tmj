@@ -27,17 +27,17 @@
          "id":1,
          "name":"Camada de Tiles 1",
          "opacity":1,
-         "type":"tilelayer",
-         "visible":true,
-         "width":20,
-         "x":0,
-         "y":0,
-          "properties":[
+         "properties":[
                 {
                  "name":"type",
                  "type":"string",
                  "value":"above"
-                }]
+                }],
+         "type":"tilelayer",
+         "visible":true,
+         "width":20,
+         "x":0,
+         "y":0
         }, 
         {
          "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -69,12 +69,62 @@
          "width":20,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":3,
+         "name":"Object Layer 1",
+         "objects":[
+                {
+                 "class":"",
+                 "height":16,
+                 "id":1,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"target",
+                         "type":"object",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "visible":true,
+                 "width":16,
+                 "x":96.5491990846682,
+                 "y":128.585812356979
+                }, 
+                {
+                 "class":"",
+                 "height":16,
+                 "id":2,
+                 "name":"",
+                 "rotation":0,
+                 "visible":true,
+                 "width":16,
+                 "x":191.762013729977,
+                 "y":111.212814645309
+                }, 
+                {
+                 "class":"",
+                 "height":16,
+                 "id":3,
+                 "name":"",
+                 "rotation":0,
+                 "visible":true,
+                 "width":16,
+                 "x":192.677345537757,
+                 "y":171.16704805492
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":3,
- "nextobjectid":1,
+ "nextlayerid":4,
+ "nextobjectid":4,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.8.6",
+ "tiledversion":"1.9.0",
  "tileheight":16,
  "tilesets":[
         {
@@ -83,6 +133,6 @@
         }],
  "tilewidth":16,
  "type":"map",
- "version":"1.8",
+ "version":"1.9",
  "width":20
 }

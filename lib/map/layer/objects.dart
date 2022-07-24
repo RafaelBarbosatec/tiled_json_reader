@@ -55,19 +55,19 @@ class Objects {
     if (json['properties'] != null) {
       properties = <Property>[];
       json['properties'].forEach((v) {
-        properties?.add(new Property.fromJson(v));
+        properties?.add(Property.fromJson(v));
       });
     }
     if (json['polygon'] != null) {
       polygon = <Polygon>[];
       json['polygon'].forEach((v) {
-        polygon?.add(new Polygon.fromJson(v));
+        polygon?.add(Polygon.fromJson(v));
       });
     }
     if (json['polyline'] != null) {
       polyline = <Polygon>[];
       json['polyline'].forEach((v) {
-        polyline?.add(new Polygon.fromJson(v));
+        polyline?.add(Polygon.fromJson(v));
       });
     }
   }

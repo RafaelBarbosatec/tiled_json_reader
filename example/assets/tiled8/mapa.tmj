@@ -130,6 +130,46 @@
         {
          "firstgid":1,
          "source":"forest_.tsj"
+        }, 
+        {
+         "columns":11,
+         "firstgid":541,
+         "image":"forestDecoration_0.png",
+         "imageheight":176,
+         "imagewidth":176,
+         "margin":0,
+         "name":"forestDecoration_0",
+         "spacing":0,
+         "tilecount":121,
+         "tileheight":16,
+         "tiles":[
+                {
+                 "id":45,
+                 "objectgroup":
+                    {
+                     "draworder":"index",
+                     "id":2,
+                     "name":"",
+                     "objects":[
+                            {
+                             "class":"",
+                             "height":16,
+                             "id":1,
+                             "name":"",
+                             "rotation":0,
+                             "visible":true,
+                             "width":16,
+                             "x":0,
+                             "y":0
+                            }],
+                     "opacity":1,
+                     "type":"objectgroup",
+                     "visible":true,
+                     "x":0,
+                     "y":0
+                    }
+                }],
+         "tilewidth":16
         }],
  "tilewidth":16,
  "type":"map",

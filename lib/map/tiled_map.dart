@@ -1,11 +1,11 @@
 import '../map/layer/map_layer.dart';
-import 'layer/object_layer.dart';
 import '../map/layer/tile_layer.dart';
 import '../map/layer/type_layer.dart';
 import '../map/tile_set_detail.dart';
 import '../util/extensions.dart';
 import 'layer/group_layer.dart';
 import 'layer/image_layer.dart';
+import 'layer/object_layer.dart';
 
 class TiledMap {
   String? backgroundColor;
@@ -75,7 +75,7 @@ class TiledMap {
     if (json['tilesets'] != null) {
       tileSets = <TileSetDetail>[];
       json['tilesets'].forEach((v) {
-        tileSets?.add(new TileSetDetail.fromJson(v));
+        tileSets?.add(TileSetDetail.fromJson(v));
       });
     }
     tileWidth = json['tilewidth'];

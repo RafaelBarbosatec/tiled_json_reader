@@ -36,9 +36,7 @@ class TiledJsonReader {
           String data = await rootBundle.loadString(
             '$_basePathFile${tileSet.source}',
           );
-          Map<String, dynamic> _map = jsonDecode(data);
-          _map['firstgid'] = tileSet.firsTgId;
-          tileSet.updateFromMap(_map);
+          tileSet.updateFromMap(jsonDecode(data));
         }
       });
     }

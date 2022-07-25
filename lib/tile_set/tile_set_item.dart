@@ -4,8 +4,7 @@ import 'package:tiledjsonreader/tile_set/tile_set_object_group.dart';
 
 class TileSetItem {
   int? id;
-  String? type;
-  String? tileClass;
+  String? typeOrClass;
   String? image;
   int? imageHeight;
   int? imageWidth;
@@ -19,8 +18,7 @@ class TileSetItem {
 
   TileSetItem.fromJson(Map<String, dynamic> json) {
     id = json['id'];
-    type = json['type'];
-    tileClass = json['class'];
+    typeOrClass = json['type'] ?? json['class'];
     image = json['image'];
     imageHeight = json['imageheight'];
     imageWidth = json['imagewidth'];
@@ -51,8 +49,7 @@ class TileSetItem {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
-    data['type'] = this.type;
-    data['class'] = this.tileClass;
+    data['typeOrClass'] = this.typeOrClass;
     if (this.objectGroup != null) {
       data['objectgroup'] = this.objectGroup?.toJson();
     }

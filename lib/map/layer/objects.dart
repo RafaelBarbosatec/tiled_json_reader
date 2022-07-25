@@ -6,7 +6,7 @@ class Objects {
   int? id;
   int? gid;
   String? name;
-  String? type;
+  String? typeOrClass;
   double? rotation;
   bool? visible;
   double? width;
@@ -25,7 +25,7 @@ class Objects {
     this.gid,
     this.name,
     this.rotation,
-    this.type,
+    this.typeOrClass,
     this.visible,
     this.width,
     this.x,
@@ -44,7 +44,7 @@ class Objects {
     gid = int.tryParse(json['gid'].toString());
     name = json['name'];
     rotation = double.tryParse(json['rotation'].toString()) ?? 0.0;
-    type = json['type'];
+    typeOrClass = json['type'] ?? json['class'];
     visible = json['visible'];
     width = double.tryParse(json['width'].toString()) ?? 0.0;
     x = double.tryParse(json['x'].toString()) ?? 0.0;
@@ -81,7 +81,7 @@ class Objects {
     data['point'] = this.point;
     data['name'] = this.name;
     data['rotation'] = this.rotation;
-    data['type'] = this.type;
+    data['typeOrClass'] = this.typeOrClass;
     data['visible'] = this.visible;
     data['width'] = this.width;
     data['x'] = this.x;

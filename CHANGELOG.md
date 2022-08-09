@@ -1,3 +1,6 @@
+## [1.2.4]
+* Fix `TileSetDetail`
+
 ## [1.2.3]
 * adds `typeOrClass`. it's `type` if Tiled 1.8 or less, or `class` if Tiled 1.9;
 

@@ -44,7 +44,7 @@ class TileSetDetail {
     tileCount = json['tilecount'];
     tiledVersion = json['tiledversion'];
     tileHeight = double.tryParse(json['tileheight'].toString()) ?? 0.0;
-    tileWidth = double.tryParse(json['tileWidth'].toString()) ?? 0.0;
+    tileWidth = double.tryParse(json['tilewidth'].toString()) ?? 0.0;
     transparentColor = json['transparentcolor'];
     version = double.tryParse(json['version'].toString()) ?? 0.0;
     type = json['type'];

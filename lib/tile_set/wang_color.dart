@@ -10,7 +10,7 @@ class WangColor {
   WangColor.fromJson(Map<String, dynamic> json) {
     color = json['color'];
     name = json['name'];
-    probability = json['probability'];
+    probability = json['probability'].toDouble();
     tile = json['tile'];
     if (json['properties'] != null) {
       properties = <Property>[];

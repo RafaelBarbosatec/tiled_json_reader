@@ -21,3 +21,7 @@ tiled.read().then((map) {
 });
 ```
 
+Supported files types:
+- `json`
+- `tsj`
+- `tmj`

@@ -6,8 +6,8 @@ class TileSetItem {
   int? id;
   String? typeOrClass;
   String? image;
-  int? imageHeight;
-  int? imageWidth;
+  double? imageHeight;
+  double? imageWidth;
   double? probability;
   List<int>? terrain;
   List<FrameAnimation>? animation;
@@ -20,9 +20,9 @@ class TileSetItem {
     id = json['id'];
     typeOrClass = json['type'] ?? json['class'];
     image = json['image'];
-    imageHeight = json['imageheight'];
-    imageWidth = json['imagewidth'];
-    probability = json['probability']?.toDouble() ?? 0.0;
+    imageHeight = double.tryParse(json['imageheight'].toString());
+    imageWidth = double.tryParse(json['imagewidth'].toString());
+    probability = double.tryParse(json['probability'].toString());
     if (json['terrain'] != null) {
       terrain = <int>[];
       json['terrain'].forEach((v) {

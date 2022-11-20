@@ -1,3 +1,6 @@
+## [1.2.6]
+* Improvements in `TileSetItem`
+
 ## [1.2.5]
 * Fix crash when WangColor probability is int. Thanks [Schwusch](https://github.com/Schwusch)
 

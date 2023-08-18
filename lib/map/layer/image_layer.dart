@@ -4,17 +4,23 @@ class ImageLayer extends MapLayer {
   String image;
   double parallaxX;
   double parallaxY;
+  bool repeatX;
+  bool repeatY;
 
   ImageLayer({
     required this.image,
     this.parallaxX = 1,
     this.parallaxY = 1,
+    this.repeatX = false,
+    this.repeatY = false,
   });
 
   ImageLayer.fromJson(Map<String, dynamic> json)
       : image = json['image'],
         parallaxX = double.tryParse(json['parallaxx'].toString()) ?? 1,
-        parallaxY = double.tryParse(json['parallaxy'].toString()) ?? 1 {
+        parallaxY = double.tryParse(json['parallaxy'].toString()) ?? 1,
+        repeatX = json['repeatx'] ?? false,
+        repeatY = json['repeaty'] ?? false {
     setParamsFromJson(json);
   }
 

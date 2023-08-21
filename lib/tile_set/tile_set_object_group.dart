@@ -30,7 +30,7 @@ class TileSetObjectGroup {
     if (json['objects'] != null) {
       objects = <TileSetObject>[];
       json['objects'].forEach((v) {
-        objects?.add(new TileSetObject.fromJson(v));
+        objects?.add(TileSetObject.fromJson(v));
       });
     }
     opacity = json['opacity'];
@@ -41,7 +41,7 @@ class TileSetObjectGroup {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['draworder'] = this.drawOrder;
     data['id'] = this.id;
     data['name'] = this.name;

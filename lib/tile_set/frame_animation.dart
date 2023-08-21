@@ -10,7 +10,7 @@ class FrameAnimation {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['duration'] = this.duration;
     data['tileid'] = this.tileid;
     return data;

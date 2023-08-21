@@ -20,7 +20,7 @@ class TileLayer extends MapLayer {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['data'] = this.data;
     data['height'] = this.height;
     data['width'] = this.width;

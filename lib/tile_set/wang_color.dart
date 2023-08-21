@@ -15,7 +15,7 @@ class WangColor {
     if (json['properties'] != null) {
       properties = <Property>[];
       json['properties'].forEach((v) {
-        properties?.add(new Property.fromJson(v));
+        properties?.add(Property.fromJson(v));
       });
     }
   }

@@ -30,24 +30,24 @@ class TileSetItem {
       });
     }
     objectGroup = json['objectgroup'] != null
-        ? new TileSetObjectGroup.fromJson(json['objectgroup'])
+        ? TileSetObjectGroup.fromJson(json['objectgroup'])
         : null;
     if (json['animation'] != null) {
       animation = <FrameAnimation>[];
       json['animation'].forEach((v) {
-        animation?.add(new FrameAnimation.fromJson(v));
+        animation?.add(FrameAnimation.fromJson(v));
       });
     }
     if (json['properties'] != null) {
       properties = <Property>[];
       json['properties'].forEach((v) {
-        properties?.add(new Property.fromJson(v));
+        properties?.add(Property.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['id'] = this.id;
     data['typeOrClass'] = this.typeOrClass;
     if (this.objectGroup != null) {

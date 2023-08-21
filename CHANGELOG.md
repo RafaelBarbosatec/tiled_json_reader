@@ -1,3 +1,6 @@
+## [1.2.7]
+* Adds `repeatX` and `repeatY` in `ImageLayer`. Thanks [Andrusowski](https://github.com/Andrusowski)
+
 ## [1.2.6]
 * Improvements in `TileSetItem`
 

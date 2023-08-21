@@ -51,7 +51,7 @@ class TileSetDetail {
     if (json['properties'] != null) {
       properties = <Property>[];
       json['properties'].forEach((v) {
-        properties?.add(new Property.fromJson(v));
+        properties?.add(Property.fromJson(v));
       });
     }
     if (json['terrains'] != null) {
@@ -69,7 +69,7 @@ class TileSetDetail {
     if (json['tiles'] != null) {
       tiles = <TileSetItem>[];
       json['tiles'].forEach((v) {
-        tiles?.add(new TileSetItem.fromJson(v));
+        tiles?.add(TileSetItem.fromJson(v));
       });
     }
   }
@@ -94,7 +94,7 @@ class TileSetDetail {
     if (json['properties'] != null) {
       properties = <Property>[];
       json['properties'].forEach((v) {
-        properties?.add(new Property.fromJson(v));
+        properties?.add(Property.fromJson(v));
       });
     }
     if (json['terrains'] != null) {
@@ -112,13 +112,13 @@ class TileSetDetail {
     if (json['tiles'] != null) {
       tiles = <TileSetItem>[];
       json['tiles'].forEach((v) {
-        tiles?.add(new TileSetItem.fromJson(v));
+        tiles?.add(TileSetItem.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['firstgid'] = this.firsTgId;
     data['source'] = this.source;
     data['image'] = this.image;

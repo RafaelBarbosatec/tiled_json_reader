@@ -73,7 +73,7 @@ class Objects {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['height'] = this.height;
     data['id'] = this.id;
     data['gid'] = this.gid;
@@ -116,7 +116,7 @@ class Property {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['name'] = this.name;
     data['type'] = this.type;
     data['value'] = this.value;

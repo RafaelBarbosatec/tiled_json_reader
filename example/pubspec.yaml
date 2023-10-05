@@ -50,4 +50,5 @@ flutter:
     - assets/
     - assets/tiled1.5/
     - assets/tiled8/
+    - assets/compressed/
 

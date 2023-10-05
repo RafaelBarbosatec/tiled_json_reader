@@ -1,9 +1,14 @@
+import 'dart:convert';
+import 'dart:io';
+
 import '../../map/layer/map_layer.dart';
 
 class TileLayer extends MapLayer {
   List<int>? data;
   double? height;
   double? width;
+  String? encoding;
+  String? compression;
 
   TileLayer({
     this.data,
@@ -12,9 +17,26 @@ class TileLayer extends MapLayer {
   });
 
   TileLayer.fromJson(Map<String, dynamic> json) {
-    data = json['data'].cast<int>();
     height = double.tryParse(json['height'].toString()) ?? 0.0;
     width = double.tryParse(json['width'].toString()) ?? 0.0;
+    encoding = json['encoding'];
+    compression = json['compression'];
+
+    if (encoding == 'base64') {
+      final base64Raw = base64Decode(json['data']);
+      switch (compression) {
+        case 'zlib':
+          data = zlib.decode(base64Raw);
+          break;
+        case 'gzip':
+          data = gzip.decode(base64Raw);
+          break;
+        default:
+          data = json['data'].cast<int>();
+      }
+    } else {
+      data = json['data'].cast<int>();
+    }
 
     setParamsFromJson(json);
   }

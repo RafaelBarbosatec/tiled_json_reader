@@ -1,3 +1,6 @@
+## [1.3.0]
+* Adds support to data `base64` enconded and compression `zlib` and `gzip`.
+
 ## [1.2.7]
 * Adds `repeatX` and `repeatY` in `ImageLayer`. Thanks [Andrusowski](https://github.com/Andrusowski)
 

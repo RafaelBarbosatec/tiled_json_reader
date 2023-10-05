@@ -32,9 +32,12 @@ class TileLayer extends MapLayer {
           data = gzip.decode(base64Raw);
           break;
         default:
-          data = base64Raw.map((e) {
-            return base64Raw[1] << 16 | base64Raw[0];
-          }).toList();
+          data = [];
+          base64Raw.indexed.forEach((element) {
+            if (element.$1 % 4 == 0) {
+              data?.add(element.$2);
+            }
+          });
       }
     } else {
       data = json['data'].cast<int>();

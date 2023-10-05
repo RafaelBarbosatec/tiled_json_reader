@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _loadMap() {
-    TiledJsonReader tiled = TiledJsonReader('assets/compressed/map.tmj');
+    TiledJsonReader tiled = TiledJsonReader('assets/compressed/map2.tmj');
     tiled.read().then((value) {
       setState(() {
         json = value.toJson().toString();

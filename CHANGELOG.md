@@ -1,3 +1,6 @@
+## [1.3.1]
+* Fix encode `base64` without compression.
+
 ## [1.3.0]
 * Adds support to data `base64` enconded and compression `zlib` and `gzip`.
 

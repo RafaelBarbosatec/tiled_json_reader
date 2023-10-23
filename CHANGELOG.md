@@ -1,3 +1,6 @@
+## [1.3.3]
+* Adds param `layerClass` in Layer to get propertie `class`.
+
 ## [1.3.2]
 * Fix encode `base64` without compression.
 

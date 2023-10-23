@@ -33,10 +33,12 @@ class TileLayer extends MapLayer {
           break;
         default:
           data = [];
-          base64Raw.indexed.forEach((element) {
-            if (element.$1 % 4 == 0) {
-              data?.add(element.$2);
+          int index = 0;
+          base64Raw.forEach((element) {
+            if (index % 4 == 0) {
+              data?.add(element);
             }
+            index++;
           });
       }
     } else {

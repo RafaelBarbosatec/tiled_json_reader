@@ -3,6 +3,7 @@
  "infinite":false,
  "layers":[
         {
+         "class":"base",
          "compression":"zlib",
          "data":"eJxjYmBgYCICKxGBWRgZGBYD6SYCeDHDqDpc6gDF7yv8",
          "encoding":"base64",

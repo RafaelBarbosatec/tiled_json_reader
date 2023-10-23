@@ -5,6 +5,7 @@ import 'package:tiledjsonreader/util/extensions.dart';
 class MapLayer {
   int? id;
   String? name;
+  String? layerClass;
   bool? visible;
   double? x;
   double? y;
@@ -14,18 +15,21 @@ class MapLayer {
   double? opacity;
   List<Property>? properties;
 
-  MapLayer(
-      {this.id,
-      this.name,
-      this.type,
-      this.visible,
-      this.x,
-      this.y,
-      this.opacity});
+  MapLayer({
+    this.id,
+    this.name,
+    this.layerClass,
+    this.type,
+    this.visible,
+    this.x,
+    this.y,
+    this.opacity,
+  });
 
   MapLayer.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
+    layerClass = json['class'];
     offsetX = double.tryParse(json['offsetx'].toString()) ?? 0.0;
     offsetY = double.tryParse(json['offsety'].toString()) ?? 0.0;
     opacity = double.tryParse(json['opacity'].toString()) ?? 0.0;
@@ -45,6 +49,7 @@ class MapLayer {
     final mapLayer = MapLayer.fromJson(json);
     id = mapLayer.id;
     name = mapLayer.name;
+    layerClass = mapLayer.layerClass;
     offsetX = mapLayer.offsetX;
     offsetY = mapLayer.offsetY;
     opacity = mapLayer.opacity;
@@ -59,6 +64,7 @@ class MapLayer {
     final Map<String, dynamic> data = Map<String, dynamic>();
     data['id'] = this.id;
     data['name'] = this.name;
+    data['class'] = this.layerClass;
     data['type'] = this.type?.getName();
     data['visible'] = this.visible;
     data['x'] = this.x;

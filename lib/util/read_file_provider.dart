@@ -1,12 +1,13 @@
-import 'package:flutter/services.dart';
+import 'dart:io';
 
 abstract class ReadFileProvider {
   Future<String> read(String path);
 }
 
-class RootBundleReadFileProvider extends ReadFileProvider {
+class DefaultReadFileProvider extends ReadFileProvider {
   @override
   Future<String> read(String path) {
-    return rootBundle.loadString(path);
+    File file = new File(path);
+    return file.readAsString();
   }
 }

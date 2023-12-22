@@ -17,7 +17,7 @@ class TiledJsonReader {
   final ReadFileProvider readFileProvider;
 
   TiledJsonReader(this.pathFile, {ReadFileProvider? readFileProvider})
-      : readFileProvider = readFileProvider ?? RootBundleReadFileProvider() {
+      : readFileProvider = readFileProvider ?? DefaultReadFileProvider() {
     _fileName = pathFile.split('/').last;
     if (!(_fileName?.contains('.json') == true ||
         _fileName?.contains('.tmj') == true)) {

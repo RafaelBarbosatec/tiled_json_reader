@@ -7,6 +7,8 @@ import 'package:tiledjsonreader/map/tiled_map.dart';
 
 import 'map/tile_set_detail.dart';
 
+export 'map/layer/tile_layer.dart';
+
 class TiledJsonReader {
   final String pathFile;
   String? _basePathFile;

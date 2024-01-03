@@ -1,3 +1,6 @@
+## [1.3.4]
+* Adds function `TileLayer.getGidInfo`;
+
 ## [1.3.3]
 * Adds param `layerClass` in Layer to get propertie `class`.
 

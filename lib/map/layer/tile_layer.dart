@@ -40,20 +40,23 @@ class TileLayer extends MapLayer {
           data = gzip.decode(base64Raw);
           break;
         default:
-          data = [];
-          int index = 0;
-          base64Raw.forEach((element) {
-            if (index % 4 == 0) {
-              data?.add(element);
-            }
-            index++;
-          });
+          data = _base64decode(base64Raw); // #base64 -> int
       }
     } else {
       data = json['data'].cast<int>();
     }
 
     setParamsFromJson(json);
+  }
+
+  // Convert base64 uncompressed to int
+  List<int> _base64decode(List<int> raw) {
+    final result = <int>[];
+    for (int i = 0; i < raw.length; i += 4) {
+      final decoded = raw[i] | raw[i + 1] << 8 | raw[i + 2] << 16 | raw[i + 3] << 24;
+      result.add(decoded);
+    }
+    return result;
   }
 
   Map<String, dynamic> toJson() {

@@ -44,16 +44,37 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SingleChildScrollView(
         child: Text(json),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _loadMap,
-        tooltip: 'Load',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                _loadMap('assets/compressed/map3.tmj');
+              },
+              child: Text('Normal'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                _loadMap('assets/compressed/map2.tmj');
+              },
+              child: Text('base64'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                _loadMap('assets/compressed/map.tmj');
+              },
+              child: Text('zlib'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
-  void _loadMap() {
-    TiledJsonReader tiled = TiledJsonReader('assets/compressed/map2.tmj');
+  void _loadMap(String path) {
+    TiledJsonReader tiled = TiledJsonReader(path);
     tiled.read().then((value) {
       setState(() {
         json = value.toJson().toString();

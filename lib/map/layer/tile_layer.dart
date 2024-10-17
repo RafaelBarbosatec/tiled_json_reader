@@ -1,5 +1,6 @@
 import 'dart:convert';
-import 'dart:io';
+
+import 'package:archive/archive_io.dart';
 
 import '../../map/layer/map_layer.dart';
 
@@ -34,10 +35,10 @@ class TileLayer extends MapLayer {
       final base64Raw = base64Decode(json['data']);
       switch (compression) {
         case 'zlib':
-          data = zlib.decode(base64Raw);
+          data = ZLibDecoder().decodeBytes(base64Raw);
           break;
         case 'gzip':
-          data = gzip.decode(base64Raw);
+          data = GZipDecoder().decodeBytes(base64Raw);
           break;
         default:
           data = _base64decode(base64Raw); // #base64 -> int
@@ -53,7 +54,8 @@ class TileLayer extends MapLayer {
   List<int> _base64decode(List<int> raw) {
     final result = <int>[];
     for (int i = 0; i < raw.length; i += 4) {
-      final decoded = raw[i] | raw[i + 1] << 8 | raw[i + 2] << 16 | raw[i + 3] << 24;
+      final decoded =
+          raw[i] | raw[i + 1] << 8 | raw[i + 2] << 16 | raw[i + 3] << 24;
       result.add(decoded);
     }
     return result;

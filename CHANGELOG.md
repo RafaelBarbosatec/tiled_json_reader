@@ -1,3 +1,6 @@
+## [1.4.0]
+* Changes 'dart:io' to 'archive'. Now it will be anble use in web platform;
+
 ## [1.3.5]
 * Bugfix for base64 converter. [#9](https://github.com/RafaelBarbosatec/tiled_json_reader/pull/9). Thanks [dvmatyun](https://github.com/dvmatyun)
 

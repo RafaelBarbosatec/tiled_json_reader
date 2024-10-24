@@ -33,16 +33,7 @@ class TileLayer extends MapLayer {
 
     if (encoding == 'base64') {
       final base64Raw = base64Decode(json['data']);
-      switch (compression) {
-        case 'zlib':
-          data = ZLibDecoder().decodeBytes(base64Raw);
-          break;
-        case 'gzip':
-          data = GZipDecoder().decodeBytes(base64Raw);
-          break;
-        default:
-          data = _base64decode(base64Raw); // #base64 -> int
-      }
+      data = _to32bit(_decode(base64Raw, compression ?? ''));
     } else {
       data = json['data'].cast<int>();
     }
@@ -50,8 +41,20 @@ class TileLayer extends MapLayer {
     setParamsFromJson(json);
   }
 
-  // Convert base64 uncompressed to int
-  List<int> _base64decode(List<int> raw) {
+  List<int> _decode(List<int> compressedData, String compression) {
+    switch (compression) {
+      case '':
+        return compressedData;
+      case 'zlib':
+        return ZLibDecoder().decodeBytes(compressedData);
+      case 'gzip':
+        return GZipDecoder().decodeBytes(compressedData);
+      default:
+        throw Exception('Only supports zlib/gzip compression.');
+    }
+  }
+
+  List<int> _to32bit(List<int> raw) {
     final result = <int>[];
     for (int i = 0; i < raw.length; i += 4) {
       final decoded =

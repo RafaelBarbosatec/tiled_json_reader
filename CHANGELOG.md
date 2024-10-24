@@ -1,3 +1,7 @@
+## [1.4.1]
+* Fix loading of compressed base64 layers. Thanks [Wilhelm Svenselius
+](https://github.com/wsv-accidis)!
+
 ## [1.4.0]
 * Changes 'dart:io' to 'archive'. Now it will be anble use in web platform;
 

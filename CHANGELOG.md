@@ -1,3 +1,6 @@
+## [1.4.2]
+* Update archive
+
 ## [1.4.1]
 * Fix loading of compressed base64 layers. Thanks [Wilhelm Svenselius
 ](https://github.com/wsv-accidis)!

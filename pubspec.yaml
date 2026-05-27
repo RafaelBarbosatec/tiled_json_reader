@@ -9,11 +9,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  archive: ^3.6.1
+  archive: ^4.0.9
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
 flutter:
+  assets:
+    - test/assets/
+    - test/assets/compressed/
+    - test/assets/tiled1.5/
 

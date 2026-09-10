@@ -1,9 +1,7 @@
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 import 'package:tiledjsonreader/tiledjsonreader.dart';
 
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
-
   group('TiledJsonReader', () {
     test('reads a map json and resolves external json tileset', () async {
       final reader = TiledJsonReader('test/assets/mapa1.json');

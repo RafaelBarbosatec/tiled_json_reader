@@ -2,11 +2,12 @@ library tiledjsonreader;
 
 import 'dart:convert';
 
-import 'package:flutter/services.dart';
 import 'package:tiledjsonreader/map/tiled_map.dart';
+import 'package:tiledjsonreader/util/read_file_provider.dart';
 
 import 'map/tile_set_detail.dart';
 
+export 'package:tiledjsonreader/util/read_file_provider.dart';
 export 'map/layer/tile_layer.dart';
 
 class TiledJsonReader {
@@ -14,8 +15,10 @@ class TiledJsonReader {
   String? _basePathFile;
   String? _fileName;
   TiledMap? _map;
+  final ReadFileProvider readFileProvider;
 
-  TiledJsonReader(this.pathFile) {
+  TiledJsonReader(this.pathFile, {ReadFileProvider? readFileProvider})
+      : readFileProvider = readFileProvider ?? DefaultReadFileProvider() {
     _fileName = pathFile.split('/').last;
     if (!(_fileName?.contains('.json') == true ||
         _fileName?.contains('.tmj') == true)) {
@@ -25,7 +28,7 @@ class TiledJsonReader {
   }
 
   Future<TiledMap> read() async {
-    String data = await rootBundle.loadString(pathFile);
+    String data = await readFileProvider.read(pathFile);
     Map<String, dynamic> _result = jsonDecode(data);
     _map = TiledMap.fromJson(_result);
     if (_map?.tileSets != null) {
@@ -35,7 +38,7 @@ class TiledJsonReader {
               tileSet.source!.contains('.tsj'))) {
             throw Exception('Invalid TileSet source: only supports json files');
           }
-          String data = await rootBundle.loadString(
+          String data = await readFileProvider.read(
             '$_basePathFile${tileSet.source}',
           );
           tileSet.updateFromMap(jsonDecode(data));

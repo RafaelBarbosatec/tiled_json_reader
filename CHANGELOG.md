@@ -1,3 +1,19 @@
+## [1.4.2]
+* Update archive
+
+## [1.4.1]
+* Fix loading of compressed base64 layers. Thanks [Wilhelm Svenselius
+](https://github.com/wsv-accidis)!
+
+## [1.4.0]
+* Changes 'dart:io' to 'archive'. Now it will be anble use in web platform;
+
+## [1.3.5]
+* Bugfix for base64 converter. [#9](https://github.com/RafaelBarbosatec/tiled_json_reader/pull/9). Thanks [dvmatyun](https://github.com/dvmatyun)
+
+## [1.3.4]
+* Adds function `TileLayer.getGidInfo`;
+
 ## [1.3.3]
 * Adds param `layerClass` in Layer to get propertie `class`.
 
